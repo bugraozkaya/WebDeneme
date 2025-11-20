@@ -1,0 +1,16 @@
+@import 'variables';
+@import 'mixins';
+
+.masthead {
+    padding: $masthead-padding; // Değişkeni kullan
+    background-color: $primary-color !important;
+    color: $text-light;
+    
+    // Icon Divider için Mixin kullanma
+    @include divider-style($text-light);
+
+    // Masthead Avatar İçin Nesting
+    .masthead-avatar {
+        width: 15rem;
+    }
+}

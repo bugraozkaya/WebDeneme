@@ -1,0 +1,24 @@
+// Elementi tam ortalamak için Flexbox Mixin'i
+@mixin flex-center {
+    display: flex;
+    align-items: center;      // Dikey hizalama
+    justify-content: center;  // Yatay hizalama
+}
+
+// Icon Divider stilini yeniden kullanmak için Mixin
+@mixin divider-style($color) {
+    .divider-custom {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        
+        .divider-custom-line {
+            background-color: $color;
+            flex-grow: 1;
+        }
+
+        .divider-custom-icon i {
+            color: $color;
+        }
+    }
+}

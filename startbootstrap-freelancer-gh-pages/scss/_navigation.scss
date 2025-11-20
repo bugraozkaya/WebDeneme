@@ -1,0 +1,45 @@
+@import 'variables';
+@import 'mixins';
+
+// 1. NESTING: HTML hiyerarşisini takip ederek kod yazma
+.navbar {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    background-color: $secondary-color !important;
+    
+    .navbar-brand {
+        font-weight: 700;
+        text-transform: uppercase;
+        color: $text-light;
+    }
+
+    .navbar-nav {
+        .nav-item {
+            .nav-link {
+                color: $text-light;
+                font-size: $nav-font-size;
+                transition: color 0.2s ease-in-out;
+                
+                &:hover { // :hover durumunu iç içe yazma
+                    color: $primary-color; 
+                }
+            }
+        }
+    }
+}
+
+
+// 2. EXTEND: Tüm butonların ortak bir stili olsun.
+// Placeholder class kullanıyoruz (%button-reset), bu sadece extend edildiğinde derlenir[cite: 63, 64].
+%button-reset {
+    border-radius: 6px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+// Navigasyon menü butonu
+.navbar-toggler {
+    @extend %button-reset; // Ortak stili miras al
+    background-color: $primary-color !important;
+}
